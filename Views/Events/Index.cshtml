@@ -6,11 +6,31 @@
 
 @if(ViewBag.Events.Count == 0)
 {
-    <p>No events yet!</p>
+<p>No events yet!</p>
 }
-<ul>
+@*<ul>
     @foreach(string meeting in ViewBag.events)
     {
-        <li>@meeting</li>
+    <li>@meeting</li>
     }
-</ul>
+</ul>*@
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+    @foreach(string meeting in ViewBag.events) 
+    {
+    <tr>
+        <td>@meeting</td>
+        <td>@meeting</td>
+    </tr>
+    }
+</table>
