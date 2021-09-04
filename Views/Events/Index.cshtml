@@ -4,33 +4,36 @@
     <a asp-controller="Events" asp-action="Add">Add Event</a>
 </p>
 
-@if(ViewBag.Events.Count == 0)
+@if (ViewBag.Events.Count == 0)
 {
-<p>No events yet!</p>
+    <p>No events yet!</p>
 }
 @*<ul>
-    @foreach(string meeting in ViewBag.events)
-    {
-    <li>@meeting</li>
-    }
-</ul>*@
+        @foreach(string meeting in ViewBag.events)
+        {
+        <li>@meeting</li>
+        }
+    </ul>*@
+@if (ViewBag.Events.Count > 0)
+{
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
 
-<style>
-    table, th, td {
-        border: 1px solid black;
-    }
-</style>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
 
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Description</th>
-    </tr>
-    @foreach(string meeting in ViewBag.events) 
-    {
-    <tr>
-        <td>@meeting</td>
-        <td>@meeting</td>
-    </tr>
-    }
-</table>
+        @foreach (string meeting in ViewBag.events)
+        {
+            <tr>
+                <td>@meeting</td>
+                <td>@meeting</td>
+            </tr>
+        }
+    </table>
+}
